@@ -1,0 +1,14 @@
+###Install Base Images
+FROM node:alpine
+
+##WORK DIR
+WORKDIR '/app'
+
+##Install Depnedencies
+
+COPY package.json .
+RUN npm install
+COPY . .
+
+##Service Restart CMD
+CMD ["npm", "run", "start"]
